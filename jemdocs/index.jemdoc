@@ -1,0 +1,23 @@
+# jemdoc: menu{MENU}{index.html}, showsource
+=Akshay Kumar
+[http://home.iitk.ac.in/~kakshay Akshay Kumar] ([kakshay@iitk.ac.in])
+
+~~~
+{}{img_left}{noddy.jpg}{noddy}{190px}{200px}
+Akshay Kumar\n
+Fifth Year Student\n
+Department of Computer Science \& Engineering\n
+IIT Kanpur\n
+Kanpur, India
+~~~
+
+Hi! I am a fifth year student of [http://cse.iitk.ac.in/acad/dualdegree.html Dual Degree Program] (BTech--MTech) in [http:http://www.cse.iitk.ac.in/ Department of Computer Science \& Engineering], [http://iitk.ac.in/ IIT Kanpur]. My research interest includes the whole of Theoretical Computer Sciences with special emphasis on [http://en.wikipedia.org/wiki/Automata_theory Automata Theory] and [http://en.wikipedia.org/wiki/Approximation_algorithm Approximation Algorithms]. I wish to pursue doctoral studies after graduation.
+
+I am presently doing master's thesis under the supervision of [http://cse.iitk.ac.in/users/skmehta/ Prof S K Mehta]. The thesis is in the field of approximation algorithms. Specifically speaking, we are looking at [https://en.wikipedia.org/wiki/Parameterized_complexity parametrized algorithms] and [https://en.wikipedia.org/wiki/Kernelization kernelization] techniques for $\textup{NP}-$Hard optimization problems. In my other avatars, I was an intern at [http://www.lsv.ens-cachan.fr/ LSV], [http://www.ens-cachan.fr/version-anglaise/ ENS Cachan] where I worked towards developing a robust theory for Parametrized Communicating Automata (PCA).
+
+== Updates
+. [http://hal.archives-ouvertes.fr/hal-01030765 Paper] on Complementation and Model Checking of Parametrized Communicating Automata accepted to [http://fsttcs.org/ FSTTCS 2014].
+. [http://link.springer.com/chapter/10.1007/978-3-319-13734-6_24 Paper] on Stemming the flow of information in a social network accepted to [http://socinfo2014.org/ SocInfo 2014].
+. Gave a [http://www2.cse.iitk.ac.in/~sigtacs/ SIGTACS talk] on "Unique Games Conjecture: Subhash Khot wins the Nevanlinna prize".
+
+This webpage has been generated using [http://jemdoc.jaboc.net/ jemdoc]: a light text-based text markup language which converts a jemdoc markup to static websites.

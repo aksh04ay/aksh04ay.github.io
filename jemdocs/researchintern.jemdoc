@@ -1,0 +1,15 @@
+# jemdoc: menu{MENU}{researchintern.html}, showsource
+= Research Internship
+
+=== PCA: Complementation and Model Checking
+/Mentored by [http://www.lsv.ens-cachan.fr/~gastin/ Prof. Paul Gastin] & [http://www.lsv.ens-cachan.fr/~bollig/ Benedikt Bollig] at [http://lsv.ens-cachan.fr/ LSV], [http://www.ens-cachan.fr/ ENS Cachan] (May - July 2014)/\n
+We study the language-theoretical aspects of parameterized communicating automata (PCAs), in which processes communicate via rendez-vous. A PCA, unlike Communicating Automata, is not dependent on topology and can be run on any topology of bounded degree. We show that, under a context bound, which restricts the local behavior of each process, PCAs are effectively complementable and use it to obtain a mondadic second-order (MSO) logic characterization of PCA. As the emptyness problem for context bounded PCAs is decidable for the class of pipelines, rings, and trees, their model-checking problem wrt. MSO properties also becomes decidable.
+- Paper accepted to FSTTCS 2014.
+- This work was presented at [http://highlights-conference.org/ Highlights 2014] (Courtesy: Benedikt). You can find the slides [http://highlights-conference.org/slides2014/2014Highlights-talk-s10a-2-BenediktBollig.pdf here].
+
+\n
+=== Stemming the flow of Information in a Social Network
+/Research Intern at [http://www.adobe.com/technology.html Adobe Research Labs] under the supervision of [http://www.adobe.com/technology/people/bangalore/balaji-vasan-srinivasan.html Dr. Balaji Vasan] (May - July 2013)/\n
+Due to the volatility of social networks, a negative campaign or a rumor can go viral resulting in severe impact to the community. We aim to solve this problem of stemming the flow of a rumor/negative campaign in a network by observing only parts of the network. Given a negative campaign and information about the status of its spread through a few candidate nodes, our algorithm estimates the information flow in the network and based on this estimated flow, finds a set of nodes which would be instrumental in stemming the information flow. The proposed algorithm is tested on real-world networks and its effectiveness is compared against other existing works.
+- Paper accepted to SocInfo 2014.
+- Filed a patent as one of the coauthor.

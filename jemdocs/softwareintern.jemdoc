@@ -1,0 +1,11 @@
+# jemdoc: menu{MENU}{softwareintern.html}, showsource
+= Software Internship
+
+=== Micello's Automated Report Generator \[[http://home.iitk.ac.in/~kakshay/docs/mice.pdf report]\]
+/Project Supervisor: [http://www.micello.com/about/team Mr. Anil Agarwal] (May - July 2012)/\n
+[http://www.micello.com/ Micello] is a provider of comprehensive indoor venue maps for mapping and navigation companies, retailers, hospital groups, mobile carriers and application developers. I worked towards developing a framework for the purpose of automating the process of generating Micello's monthly report. With the help of the process developed, the time taken to generate report can be cut down from nearly 20 hours to a matter of few minutes.
+
+\n
+=== CAS - Computerized Algebra System
+/Summer project under the supervision of Programming Club, IITK (May - June 2011)/\n
+A computerized algebra system is a software which computes symbolic mathematical expressions. We developed an automated Computerized Algebra System on the lines of Matlab & Mathematica capable of performing complex manipulations. It can handle symbolic computations, differential, integral, optimization, fourier transform, statistical computation, etc.

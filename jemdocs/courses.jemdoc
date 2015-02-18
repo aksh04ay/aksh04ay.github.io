@@ -1,0 +1,39 @@
+# jemdoc: menu{MENU}{courses.html}, showsource
+= Course Work
+
+== CS Theory
+- CS644: Finite Automata on Infinite Input
+- CS687: Algorithmic Information Theory
+- CS640: Computational Complexity
+- CS698D: Data Compression
+- CS340: Theory of Computation
+- CS201: Discrete Mathematics
+- CS302: Mathematical Logic
+
+== Algorithms
+- CS698C: Semidefinite Programming
+- CS648: Randomized Algorithms
+- CS698T: Approximation Algorithms
+- CS345: Algorithms-II
+- ESO211: Data Structures \& Algorithms
+
+== Mathematics
+- SE356: Convex Optimizations
+- PHI455: Non--classical Logic
+- MTH102: Linear Algebra \& Complex Analysis
+- MTH101: Real Analysis \& Multivariate Calculus
+- MTH203: Differential Equations
+
+== Machine Learning \& Artificial Intelligence
+- CS771: Machine Learning: Tools, Techniques \& Applications
+- CS365: Artificial Intelligence \& Programming
+
+== Systems \& Programming
+- CS350: Principles of Programming Languages
+- CS425: Computer Networks
+- CS315: Database Management System
+- CS335: Compiler Design
+- CS330: Operating System
+- CS220: Computer System \& Organization
+- ESC101: Introduction to Computing
+- ESC102: Introduction to Electronics

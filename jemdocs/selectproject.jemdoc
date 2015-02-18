@@ -1,0 +1,33 @@
+# jemdoc: menu{MENU}{selectproject.html}, showsource
+= Selected Projects
+
+=== Java Compiler
+/Course Project in CS335 under guidance of Prof. S K Agarwal (January - April 2013)/\n
+- Built a compiler for Java Programming language using lex/yacc with MIPS assembly as the target.
+- Implemented object oriented features such as classes, objects, type checking, constructors/destructors, function overloading, access specifiers, polymorphism, etc.
+
+=== Hostel Management System
+/Course Project in CS315 under guidance of Prof. Harish Karnick (January - April 2013)/\n
+- Developed a web portal using Apache/PHP as the frontend and MySQL as the backend to cater to various affairs of hostel.
+- Implemented a separate sub-system for an administrator than a user.
+- Incorporated features of book club, washerman transaction, complaint register, canteen & mess transaction for a user.
+
+=== Implementation of Onion Routing
+/Course Project in CS425 under guidance of Prof. Dheeraj Sanghi (October - November 2012)/\n
+- Implemented the first generation onion routing (a distributed P2P application for anonymous communication) in Python.
+- Used AES (Advanced Encryption Standard) for data encryption.
+
+=== Extension of PintOS
+/Course Project in CS330 under guidance of Prof. Subhajit Roy (August - November 2012)/\n
+- Exteded the existing PintOS to support basic OS functionalities.
+- Implemented features of virtual memory, POSIX message queues, multithreaded programming and file system handling.
+
+=== Interpreter for Declarative Sequential Language
+/Course Project in CS350 under guidance of Prof. Satyadev Nandakumar (August - November 2012)/\n
+- Developed an interpreter in Mozart Oz environment for Declarative Sequential Langauge.
+- Implemented Semantic Stack and Single Store Assignment to output sequence of execution states given a code as input.
+
+=== Implementation of a simplified CPU on FPGA unit
+/Course Project in CS220 under guidance of Prof. Amey Karkare (July - October 2011)/\n
+- Fabricated a 4-bit processor implementing ALU, Processor and Register file.
+- Used BSV (BlueSpec System Verilog) to implement the hardware code on FPGA.

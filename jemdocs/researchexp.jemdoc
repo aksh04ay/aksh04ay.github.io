@@ -1,0 +1,27 @@
+# jemdoc: menu{MENU}{researchexp.html}, showsource
+= Research Experience
+
+=== Parametrized Algorithms for Set Cover & Related Problems
+/Ongoing Master's Thesis project under the guidance of Prof. S K Mehta (December 2013 - Present)/\n
+Investigating different Kernel techniques used to bound the running of set cover problem in a parametrized setting and trying to use it to approximate other related problems such as Multiset Cover, Hitting Set, etc.
+
+=== Concentration Bounds for Absolutely Normal Real Numbers \[[docs/talagrand.pdf report]\]
+/Bachelors Project under guidance of Prof. Satyadev Nandakumar (July - November 2013)/\n
+Turing gave a computable construction for Absolutely Normal Real Numbers where he used a concentration bound inequality without proving it. In this paper, we prove a slightly weaker version of the inequality and show that Turing's construction still goes through. Paper to be submitted at Information Processing Letters.
+
+=== Game Arguments in Algorithm Information Theory \[[docs/levinGame_AIT.pdf report]\]
+/Course Project in CS397 under guidance of Prof. Satyadev Nandakumar (January - April 2013)/\n
+Devised an alternate proof for Levin's Coding Theorem using ideas from Game Theory. In addition, we also investigated certain other results of AIT like Friedburg's unique numbering, Muchnik Vyugin Theorem, etc. and at their proof involving Game Theory arguments and tried discovering their proof using Game Theoretical arguments.
+
+=== Movie Recommender System \[[docs/movie_recommender.pdf report]\]
+/Course Project in CS771 under guidance of Prof. Harish Karnick (July - November 2013)/\n
+Devised a recommender system to guess movie ratings given by a user using an improved version of Matrix Factorization algorithm for movie recommendation used in Netflix contest. Algorithm used is a hybrid filtering algorithm which uses both movie's and user's attributes.
+
+=== Hand Gesture Recognition using Microsoft's Kinect \[[docs/Kinect.pdf report]\]
+/Course Project in CS365 under guidance of Prof. Amitabha Mukerjee (March - April 2012)/\n
+Recognized robust hand gestures by applying FEMD (Field Earths Mover Distance) on shape of hand extracted by Kinect. Hacked Kinect to detect robust hand gestures using PointCloud Library and OpenCV. Accuracy of nearly 75% reported.
+
+=== Hypercomputation: Beyond Turing Machines \[[docs/hypercomputation.pdf report]\]
+/Course Project in PHI455 under guidance of Prof. A V R Sarma (July - November 2013)/\n
+Studied various proposals of extension of Turing Machines and their feasibility. Looked at a few
+plausible possibilities of hypercomputation and devised a theoretical model for the same.

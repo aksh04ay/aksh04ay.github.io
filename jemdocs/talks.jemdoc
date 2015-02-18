@@ -1,0 +1,18 @@
+# jemdoc: menu{MENU}{talks.html}, showsource
+= Talks
+
+=== Unique Games Conjecture: Subhash Khot wins the Nevanlinna prize. \[[ugc.html webpage]\]
+/SIGTACS Talk/\n
+Very recently, Subhash Khot won the Rolf Nevanlinna Prize, considered one of the top honors in the field of Mathematics. The talk presented was to understand the Unique Games Conjecture (UGC) and the importance of it in Theoretical Computer Sciences. It consisted of complexity of approximating problems, PCP Theorem and the need for UGC. Finally, inapproximability results using UGC were derived and we showed the connections between geometry, Fourier analysis and Theoretical Computer Sciences.
+
+=== A combinatorial primal--dual approach to semidefinite programs. \[[docs/sdp.pdf ppt]\]
+/Presentation as part of course project of CS698C (Semidefinite Programming)/\n
+Primal--Dual approach has become a ubiquitous tool is deriving approximate solution using Linear Programming. This talk, motivated by the works of Sanjeev Arora, Elad Hazan, and Satyen Kale, develops a generalized primal--dual approach to solve SDPs using a modification of Matrix Multiplicative Weights update rule to symmetric matrices.
+
+=== The Google Similarity Distance. \[[docs/AITPresentation.pptx ppt]\]
+/Presentation as part of course project of CS687 (Algorithmic Information Theory)/\n
+This talk, motivated by the works of Rudi L. Cilibrasi, and Paul M. B. Vitanyi, presents a theory of quantifying similarity between words and phrases based on information distance and Kolmogorov Complexity. By calculating similarity based on Google page counts, applications to hierarchial clustering, classification, and language translation are discussed.
+
+=== Stemming the spread of rumors in a social network. \[[docs/adobe_talk.pptx ppt]\]
+/Talk given at Adobe Research Lab/\n
+The proliferation of information in present world warrants a need to track them effectively and contain it, if need be. This talk discusses a framework to check the spread of negative information in a social network by tracking the source of rumor and identifying the possible set of nodes which can help tackle the spread of rumor.

@@ -1,0 +1,65 @@
+# jemdoc: menu{MENU}{contact.html}, showsource
+=Contact
+
+~~~
+{}{raw}
+    <style>
+      #map_canvas {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map_canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(26.514350, 80.23479659999998),
+          zoom: 17,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(26.514350, 80.23479659999998),
+            map: map,
+            title: 'Rajeev Motwani Building'
+        });
+
+        var infowindow = new google.maps.InfoWindow({
+          content: 'RM515(D), Rajeev Motwani Building, CSE, IITK'
+        });
+
+        infowindow.open(marker.get('map'), marker);
+
+
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <div style="width: 100%; overflow: hidden;">
+      <div style="width: 500px; height: 400px; float: left;" id="map_canvas"></div>
+      <div style="margin-left: 520px;">
+~~~
+\n
+: {My physical coordinates are:}
+RM515(D)\n
+Rajeev Motwani Building\n
+Department of Computer Science \& Engineering\n
+IIT Kanpur\n
+Kanpur -- 208016\n
+India\n
+\n
+
+: {Alternately, you can contact me via email at the following addresses:}
+[kakshay@iitk.ac.in]\n
+[kakshay@cse.iitk.ac.in]\n
+[aksh04ay@gmail.com]\n
+\n
+
+: {My cell number is: +91 9452511316}
+
+
+~~~
+{}{raw}
+    </div>
+  </div>
+~~~
