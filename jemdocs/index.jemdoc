@@ -3,12 +3,19 @@
 [http://home.iitk.ac.in/~kakshay Akshay Kumar] ([kakshay@iitk.ac.in])
 
 ~~~
-{}{img_left}{noddy.jpg}{noddy}{190px}{200px}
+{}{img_left}{noddy.jpg}{noddy}{250px}{200px}
 Akshay Kumar\n
 Fifth Year Student\n
 Department of Computer Science \& Engineering\n
 IIT Kanpur\n
 Kanpur, India
+~~~
+
+~~~
+. My master's thesis defence was on July 22, 2015. The slides of the talk can be found [thesis/pre.pdf here].
+. I have decided to join Google, London as a Software Engineer.
+
+The information presented here might be outdated.
 ~~~
 
 Hi! I am a fifth year student of [http://cse.iitk.ac.in/acad/dualdegree.html Dual Degree Program] (BTech--MTech) in [http:http://www.cse.iitk.ac.in/ Department of Computer Science \& Engineering], [http://iitk.ac.in/ IIT Kanpur]. My research interest includes the whole of Theoretical Computer Sciences with special emphasis on [http://en.wikipedia.org/wiki/Automata_theory Automata Theory] and [http://en.wikipedia.org/wiki/Approximation_algorithm Approximation Algorithms]. I wish to pursue doctoral studies after graduation.
