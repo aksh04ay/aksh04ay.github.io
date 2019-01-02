@@ -1,6 +1,13 @@
 # jemdoc: menu{MENU}{courses.html}, showsource
 = Course Work
 
+== Stanford AI Certification
+- CS229: Machine Learning
+- CS231N: Convolutional Neural Networks for Visual Recognition
+- CS228: Probabilistic Graphical Models
+- CS224W: Analysis of Networks
+
+
 == CS Theory
 - CS644: Finite Automata on Infinite Input
 - CS687: Algorithmic Information Theory
