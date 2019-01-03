@@ -1,9 +1,10 @@
 # jemdoc: menu{MENU}{index.html}, showsource
 =Akshay Kumar
-[http://home.iitk.ac.in/~kakshay Akshay Kumar] ([kakshay@iitk.ac.in])
+[https://aksh04ay.github.io/ Akshay Kumar] ([aksh04ay@gmail.com])
 
 ~~~
-{}{img_left}{noddy.jpg}{noddy}{250px}{200px}
+{}{img_left}{new.jpg}{noddy}{200px}{250px}
+#{}{img_left}{new.jpg}{noddy}{250px}{200px}
 Akshay Kumar\n
 Software Engineer\n
 Google LLC\n
@@ -24,9 +25,7 @@ Mountain View, CA, USA
 
 Hi! I am a Software Engineer at Google Mountain View. 
 
-I work on problems related to measurement and optimization of effectiveness of ads on Youtube. I am more broadly interested in auctioning, bidding and budgeting for ads on YouTube.
-
-Prior to moving to Mountain View, I was at Google London where I worked on Google AdSense.
+I work on problems related to measurement and optimization of effectiveness of ads on Youtube. I am more broadly interested in auctioning, bidding, budgeting and prediction modeling for ads on YouTube. Prior to moving to Mountain View, I was at Google London where I worked on Google AdSense.
 
 Before that, I graduated from IIT Kanpur with a Bachelor's and Master's Degree in Computer Science in July 2015.
 

@@ -1,9 +1,21 @@
-# jemdoc: menu{MENU}{researchexp.html}, showsource
+# jemdoc: menu{MENU}{researchexp.html}, showsource, addcss{mmw.css}
 = Research Experience
 
-=== Parametrized Algorithms for Set Cover & Related Problems
-/Ongoing Master's Thesis project under the guidance of Prof. S K Mehta (December 2013 - Present)/\n
-Investigating different Kernel techniques used to bound the running of set cover problem in a parametrized setting and trying to use it to approximate other related problems such as Multiset Cover, Hitting Set, etc.
+=== Predictive Lift modelling : Predicting incremental gains \[[docs/CS229_Project_Report.pdf report], [docs/CS229_Poster.pdf poster]\]
+/Course Project in CS229: Machine Learning (September - December 2018)/\n
+Designed a predictive response model using uplift modelling technique to predict the “incremental” effect of an ad campaign on consumer behavior and use it to target the optimal set of customers.
+
+=== Face Swapping and Harmonization using neural nets \[[docs/cs231n-face-swapping-harmonization.pdf report], [docs/face-swapping-harmonization-poster.pdf poster]\]
+/Course Project in CS231N: Convolutional Neural Networks for Visual Recognition (April - June 2018)/\n
+Developed an approach for face anonymization via. face detection, anonymization and blending.
+Trained a 9 layer deep CNN on LFW (Labeled Faces in the Wild) dataset.
+
+=== Network Analysis of Weighted Signed Bitcoin Network \[[docs/224w-project-report.pdf report], [docs/network-analysis-weighted-poster.pdf poster]\]
+Studied trust in signed weighted bitcoin network and designed a linear regression based algorithm for trust prediction using social imbalance theory and graph topology.
+
+=== Parameterized Algorithms for Cycle Hitting Problems \[[docs/thesis.pdf report]\]
+/Master's Thesis project under the guidance of Prof. S K Mehta (December 2013 - July 2015)/\n
+Devised an $O(17^k)$ deterministic FPT algorithm for Even Cycle Transversal Problem. Better than the currently best known $O(50^k)$ FPT algorithm.
 
 === Concentration Bounds for Absolutely Normal Real Numbers \[[docs/talagrand.pdf report]\]
 /Bachelors Project under guidance of Prof. Satyadev Nandakumar (July - November 2013)/\n
