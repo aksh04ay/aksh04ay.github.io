@@ -139,6 +139,7 @@ In addition, we can have a background GC job which can keep compacting versions
 from committed transactions.
 To maintain indexes, we need to maintain indexes for each version
 (and discard upon GC).
+This technique is known as *multi-version concurrency control* (MVCC).
 
 ### Preventing Lost Updates
 Read Committed and Snapshot Isolation provides good guarantees about
@@ -235,10 +236,111 @@ each stored procedure touches only a single partition.
 Else, we will have to block on multiple partitions which might not be efficient.
 
 
-### 2 Phase Locking
+### Two-Phase Locking (2PL)
+With read committed isolation, writes block writes.
+Here, we further strength the requirements.
+The essential idea is:
+multiple transactions can read an object,
+but if some transaction wants to write to an object,
+it must first acquire an exclusive lock.
+
+There are two kinds of lock: shared and exclusive lock.
+1. Transactions reading an object must first acquire a
+  shared lock for that object.
+  Multiple transaction can hold the shared lock concurrently.
+  If some transaction has an exclusive lock, other transactions must wait.
+2. Transactions writing to an object must first acquire an
+  exclusive lock for the object.
+3. If a transaction first reads and then writes, it can upgrade its
+  shared lock to an exclusive lock.
+4. Once a transaction has acquired a lock,
+  it must hold the lock until the end of transaction.
+
+Sometimes there might be deadlock
+(e.g. two transactions both trying to increment the same counter).
+The database automatically detects deadlock and aborts one of the transaction.
+2PL Isolation is more prone to deadlocks due to so many locks and as such,
+can have unstable latencies.
+
+#### Predicate Locks
+We need some more setup for handling *phantoms*.
+We need a predicate lock: one that locks multiple objects matching a predicate.
+For the meeting room booking case,
+we can define a predicate lock which can a predicate lock which is a
+function of `room_id`, `start_time` and `end_time` of the meeting.
+1. A transaction trying to add a meeting room first acquires a shared-mode
+  predicate lock.
+  By shared-mode predicate lock, we mean it is shared with any predicate lock
+  which have a non-empty intersection with this lock
+  (i.e. there exists some `room_id` which is empty for the time duration
+  when the two meetings overlap).
+2. When a transaction wants to write or update any object,
+  it must first check whether the new or old value (i.e. empty rooms) matches
+  any existing predicate lock.
+  If it does, this transaction must wait.
+
+In the pre-predicate lock world, the locks were on an individual object.
+As such, two locks lock either the same object or different objects.
+Predicate locks, on the other hand, locks span multiple different objects.
+As such, they are shared if there's one common object locked by both.
+
+#### Index-range locks
+Checking for matching locks with predicate based locks can be expensive.
+One idea is to match on a more "coarser" set of objects
+(e.g. looking for all bookings in a room or all rooms between some time).
+Insertions/updates might need to wait other non-relevant transactions,
+but shared lock matching is simplified.
+As an extreme example, we can fallback to a shared lock on the entire table,
+which essentially means stopping all write transactions to the table.
 
 ### Serializable Snapshot Isolation
+Two-phase locking is pessimistic concurrency control mechanism:
+the premise here is if something can possibly go wrong, wait!
+Serial execution is pessimistic to the extreme.
+Serializable Snapshot Isolation is an optimistic concurrency control mechanism.
+The idea is instead of blocking, let the transaction continue and
+if isolation is violated, abort the transaction and retry.
 
+Optimistic concurrency control performs badly if there is high contention
+among transactions. It makes more sense if we have commutative write operations
+(e.g. incrementing a counter).
+SSI is based on snapshot transaction:
+all transactions read from a consistent state.
+SSI also adds mechanism to detect serialization conflicts.
 
+The problem with snapshot isolation was:
+a transaction is taking a decision based on an outdated premise
+(e.g. write skew and phantoms).
+The database doesn't know whether a write is based on an outdated premise.
+To detect such situations, we consider two situations.
+
+#### Detecting stale MVCC reads
+This happens when an uncommitted write (from transaction $$B$$)
+has happened before the read of current transaction $$A$$.
+Since the uncommitted write has been ignored,
+any further writes by $$A$$ can violate serializability.
+
+To prevent this anomaly, the database keeps track of all transactions which
+have ignored an uncommitted write.
+When the transaction commits, the database first checks if
+transaction $$B$$ has been committed.
+If yes, $$A$$ is aborted.
+
+We wait for the commit of $$B$$ as $$A$$ might be a read only transaction.
+In this case, $$A$$ need not be aborted.
+
+#### Detecting writes that affect prior reads
+Here, we consider the case where two transactions $$A$$ and $$B$$
+both read the same object and then update it.
+The database maintains the information of which all transaction have
+read a particular object.
+When a transaction writes to the object, it notifies the other transactions
+that its reads are outdated.
+The transaction to commit first wins and all other transactions are aborted.
+This trick can also work with index-range locks.
+
+#### Performance
+SSI needs more tracking of each transaction but
+compared to 2PL, it avoids lock waits.
 
 [replication]: replication
