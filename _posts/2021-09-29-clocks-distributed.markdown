@@ -64,4 +64,21 @@ If it does, spanner waits for one transaction to be over.
 Furthermore, it deploys a GPS receiver based clock in each datacenter to
 minimize the CI width.
 
+Another issue related to time can happen during leader selection.
+The leader node typically acquires a lease and
+renews it some time before its expiry.
+The lease expiration time might be set on some other node.
+Furthermore, the lease might expire during the time the leader node is
+processing a request (if it's taking too much time e.g. GC-ing or suspended VM).
+
+Finally, segueing into process pauses,
+they may have unintended effect of their own.
+Process pauses can be induced by GC, suspending a VM or a thread, disk access,
+disk swapping (page fault), etc.
+For some environments (e.g. aircraft software), pausing processes can be costly.
+Some of can be mitigated by having dedicated hardware, using single core or
+limiting GC.
+To limit GC, we can choose to only kill short-lived objects and restart
+the processes periodically.
+
 [leap-seconds]: https://en.wikipedia.org/wiki/Leap_second
