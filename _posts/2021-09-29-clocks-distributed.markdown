@@ -81,7 +81,4 @@ limiting GC.
 To limit GC, we can choose to only kill short-lived objects and restart
 the processes periodically.
 
-
-
-
 [leap-seconds]: https://en.wikipedia.org/wiki/Leap_second
