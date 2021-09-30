@@ -76,7 +76,7 @@ they may have unintended effect of their own.
 Process pauses can be induced by GC, suspending a VM or a thread, disk access,
 disk swapping (page fault), etc.
 For some environments (e.g. aircraft software), pausing processes can be costly.
-Some of can be mitigated by having dedicated hardware, using single core or
+Some of it can be mitigated by having dedicated hardware, using single core or
 limiting GC.
 To limit GC, we can choose to only kill short-lived objects and restart
 the processes periodically.
