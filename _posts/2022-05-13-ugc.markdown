@@ -7,7 +7,7 @@ tags:
 usemathjax: true
 ---
 
-
+_This post was published way back in 2015 when this was in news. Mirroring it here from my old page._
 
 Very recently, [Subhash Khot][khot] [won][won] the [Rolf Nevanlinna Prize][nevanlinna], considered one of the top honours in the field of mathematics, for his contribution to computational complexity theory. The conjecture has broad applications in the theory of hardness of approximations and is unusual in the sense that unlike $$\mathrm{P} \stackrel{?}{=} \mathrm{NP}$$ problem, the academic world seems evenly divided on whether this conjecture is true or not.
 
