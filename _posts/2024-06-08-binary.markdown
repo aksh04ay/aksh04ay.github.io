@@ -1,0 +1,206 @@
+---
+layout: post
+title:  "Various flavors of binary search"
+date: 2024-06-08
+tags:
+  - leetcode
+  - algorithms
+usemathjax: true
+---
+
+I was recently griding leetcode. Here, I take a look at binary search implementation. While the overall algorithm is simple, getting its implementation correct can be tricky - there are multiple edge cases to keep track of. We will start with a simple standard binary search problem and iteratively build on it. So, fasten your seat belts and get ready for an adventure into the world of binary search!
+
+The overall algorithm looks like - maintain left and right indexes. Then, find the mid index and compare the value at mid index to the target. Based on this comparison, either update left index or right index. Keep doing this till left and right become equal.
+
+In terms of pseudocode,
+~~~
+def binarySearch(nums, target):
+    left, right = 0, last_element_index
+    while left < right:
+        mid = average of left & right
+        if nums[mid] == target:
+            update left or right to be mid or mid +/- 1
+        elif nums[mid] < target:
+            update left to be mid or mid + 1
+        else:
+            update right to be mid or mid - 1
+    return correct_index
+~~~
+
+There are usually a couple of point of confusions:
+
+1. Should `mid` be `(left + right) / 2` or `(left + right + 1) / 2`?
+2. Whether to use `mid` or `mid +/- 1` while updating `left` or `right` indexes?
+
+If you think about it, both the conditions roughly boils down to - how do we ensure the while loop always terminates? As we shall see, both the questions are closely related to each other and the answer to (2) determines the answer to (1). Note that we can't set both `left` and `right` to `mid` (in the last 2 if-else cases). Otherwise, the while-loop would never terminate. So, either we set `left` to `mid + 1` or set `right` to `mid - 1`. We may have to apply a similar reasoning to the first if-else clause as well.
+
+### Sorted array with unique elements
+
+Let's start with a very simple problem. Suppose we have a sorted array of integers without any repeating numbers. We are given a target number which exists in the array. The problem is to find the index of the target in the original array.
+
+Here's a rough implementation in python:
+
+~~~
+def binarySearch(nums, target):
+    left, right = 0, len(nums) - 1
+    while left < right:
+        mid = (left + right) // 2
+        if nums[mid] == target:
+            return mid
+        elif nums[mid] < target:
+            # [mid + 1, right]
+            left = mid + 1
+        else:
+            # [left, mid - 1]
+            right = mid - 1
+    return left
+~~~
+
+Simple enough, right! Let's take a closer look at the 3 if-clauses.
+
+1. The first one is pretty straightforward.
+2. We know that `target` is greater than `nums[mid]`. Hence, our new search space is `[mid + 1, right]`.
+3. We apply a similar reasoning here. The search space would be `[left, mid - 1]`.
+
+As a simple extension of this problem, consider the case when `target` may not exist in the sorted array (let's return -1 for such cases). In this case, we can check `nums[left]` to `target` after the while-loop and return `-1` if they are not equal.
+
+### Sorted array with unique elements. Smallest index whose element equals target.
+
+Let's extend the previous problem. Suppose we can have duplicate elements. And we need to find the minimum index whose value equals target (let's assume the target exists in the sorted array).
+
+Think about how the `nums[mid] == target` case would change? Note that we need to find the minimum index `idx` such that `nums[idx]` is `target`. If `nums[mid] == target`, there could be indexes `idx` smaller than `mid` which will satisfy `nums[idx] == target`. As such, we now need to search in `[left, mid]` i.e. we set `right` to `mid`. Can we set `right` to `mid - 1`? This means the search space would be `[left, mid - 1]`. It is possible that `nums[mid - 1]` is smaller than target and `mid` is the minimum index whose value is `target`. Hence, `right` can't be set to `mid - 1`.
+
+What about the case when `nums[mid] < target`? The search space would be `[mid + 1, left]`. What about the case when `nums[mid] > target`? The search space would be `[left, mid - 1]`. Let's try to code this:
+
+~~~
+def binarySearchLowestIndex(nums, target):
+    left, right = 0, len(nums) - 1
+    while left < right:
+        mid = (left + right) // 2
+        if nums[mid] == target:
+            # [left, mid]
+            right = mid
+        elif nums[mid] < target:
+            # [mid + 1, right]
+            left = mid + 1
+        else:
+            # [left, mid - 1]
+            right = mid - 1
+    return left
+~~~
+
+Looks reasonable? The only remaining part is we need to ensure the while loop always terminates. The interesting bit is `right = mid` in the first if-clause. When `left` and `right` differ by `1`, `mid` will rounded to `left`. `right = mid` would mean `left` becomes equal to `right` and we exit out of while-loop. Good!
+
+Note that we can probably condense 1st and 3rd if-clause into a single if-clause : `if nums[mid] >= target: right = mid`. But, it will keep the current code as it for clarity.
+
+We can again think about the case when `target` does not exist in the sorted array. It should be very similar to the previous problem.
+
+### Sorted array with unique elements. Largest index whose element equals target.
+
+Very similar to the last problem. Except that in this case, we need to return the largest index whose value is equal to `target`.
+
+Let's look at the case when `nums[mid] == target`. Here, we would now need to search in `[mid, right]` (i.e. `left = mid`). Why? Because we could have some index `idx` greater than `mid` such that `nums[idx]` is `target`. What about the other two cases? They should be similar to last example.
+
+~~~
+def binarySearchLowestIndex(nums, target):
+    left, right = 0, len(nums) - 1
+    while left < right:
+        mid = (left + right + 1) // 2
+        if nums[mid] == target:
+            # [mid, right]
+            left = mid
+        elif nums[mid] < target:
+            # [mid + 1, right]
+            left = mid + 1
+        else:
+            # [left, mid - 1]
+            right = mid - 1
+    return left
+~~~
+
+See anything else different? Why did we add `1` in `mid` calculation? Let's again think of the case when `left` and `right` differ by `1`. In this case, `mid` would be same as `left`. If `nums[mid] == target`, then `left = mid` is a no-op. As such, the while-loop never terminates. To fix this, we add `1` while computing `mid`. This would ensure `mid` is equal to `right` when `left` and `right` differ by `1`. And then when we set `left` to `mid`, we are effectively setting `left` to `right`. Voila! We are out of while-loop.
+
+This is a crucial observation:
+1. In the second example, we had set `right = mid`. This meant `mid = (left + right) / 2`.
+2. In the last example, we had set `left = mid`. This meant `mid = (left + right + 1) / 2`.
+
+Think about it for a moment to fully internalize it.
+
+And as before, we can condense the first two if-clauses into: `if nums[mid] <= target: left = mid`. Also think of the case when `target` is not present in the sorted array.
+
+### Sorted array. Minimum index whose element is greater than or equal to the target.
+
+Here, we have a sorted array (possibly with duplicates). We have a `target` (which may or may not be present in the array). We need to find the minimum index `idx` such that `nums[idx]` is greater than or equal to `target`.
+
+The first case is `nums[mid] == target`. Here, there can still be indexes `idx` smaller than `mid` such that `nums[idx]` is `target`. Hence, the search space would be `[left, mid]`.
+
+What about the case when `nums[mid] < target`? Here, `mid` is not a viable candidate as the element at index at `mid` is smaller than `target`. So, the search space would be `[mid + 1, right]` i.e. `left = mid + 1`.
+
+What about `nums[mid] > target`? Here, `mid` is a potential index. So, the search space is `[left, mid]` i.e. `right = mid`.
+
+~~~
+def binarySearchLowestIndexGreaterThanOrEqual(nums, target):
+    left, right = 0, len(nums) - 1
+    while left < right:
+        mid = (left + right) // 2
+        if nums[mid] == target:
+            # [left, mid]
+            right = mid
+        elif nums[mid] < target:
+            # [mid + 1, right]
+            left = mid + 1
+        else:
+            # [left, mid]
+            right = mid
+    return left
+~~~
+
+Do we need a `1` in mid computation? No! Because of `right = mid` statement.
+
+### Sorted array. Maximum index whose element is less than or equal to the target.
+
+Similar to last problem. Here, we need to find the maximum index `idx` such that `nums[idx]` is less than or equal to `target`.
+
+The handling of the three cases is similar to the previous code. I will leave the explanation as an exercise for the reader and skip directly to the code.
+
+~~~
+def binarySearchHighestIndexLessThanOrEqual(nums, target):
+    left, right = 0, len(nums) - 1
+    while left < right:
+        mid = (left + right + 1) // 2
+        if nums[mid] == target:
+            # [mid, right]
+            left = mid
+        elif nums[mid] < target:
+            # [mid, right]
+            left = mid
+        else:
+            # [left, mid - 1]
+            right = mid - 1
+    return left
+~~~
+
+Note that we had to add a `1` to `mid` computation due to `left = mid` statement.
+
+### Integer overflow for indexes
+
+Note that `mid = (left + right) / mid` or `mid = (left + right + 1) / mid`. This works fine in Python 3 as it supports arbitrary precision arithmetic. In C++ and other languages, `left + right` may overflow. To workaround this, you can use `left + (right - left) / 2`.
+
+### Other interesting binary search problems
+1. [Search in Rotated Sorted Array][rotated] - Here, you would have to first consider two cases - when right part of array is fully sorted (`nums[mid] < nums[right]`) and when left part of array is fully sorted. In right sorted case, you can binary search based on the case if `target` lies in right sorted part (i.e. `nums[mid] < target < nums[right]`) - trying to formulate the other condition (the left part) would be more complicated. Similarly, when the left part is sorted, check if target lies in left sorted part.
+2. [Time Based Key-Value Store][time-kv] - Very similar to one the last 2 cases we discussed above.
+3. [Design Hit Counter][hit-counter]
+4. [Next Permutation][next-permutation]
+5. [Maximum Profit in Job Scheduling][max-profit] - Nice problem which combines dynamic programming with binary search.
+6. [First Bad Version][bad-version] - Just booleans. Simpler problem.
+7. [Random Pick with Weight][weighted-sampling]
+8. [Minimum Array Length After Pair Removals][pair-removals] - It may not seem like binary search initially. But think more about it till you unravel the hidden binary search.
+
+[rotated]: [https://leetcode.com/problems/search-in-rotated-sorted-array/description/]
+[time-kv]: [https://leetcode.com/problems/time-based-key-value-store/description/]
+[hit-counter]: [https://leetcode.com/problems/design-hit-counter/description/]
+[next-permutation]: [https://leetcode.com/problems/next-permutation/description/]
+[max-profit]: [https://leetcode.com/problems/maximum-profit-in-job-scheduling/description/]
+[bad-version]: [https://leetcode.com/problems/first-bad-version/description/]
+[weighted-sampling]: [https://leetcode.com/problems/random-pick-with-weight/description/]
+[pair-removals]: [https://leetcode.com/problems/minimum-array-length-after-pair-removals/description/]
