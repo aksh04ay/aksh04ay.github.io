@@ -131,16 +131,16 @@ For every $$\epsilon,\delta>0$$, there exists a $$n=n(\epsilon,\delta)$$, such t
 
 Note that the conjecture is false if $$\epsilon=0$$. Also, a random assignment satisfies $$\frac{1}{n}$$ fraction of edges and hence $$n \ge \frac{1}{\delta}$$.
 
-[khot]: [https://www.cs.nyu.edu/~khot/]
-[won]: [http://www.simonsfoundation.org/quanta/20140812-a-grand-vision-for-the-impossible/]
-[nevanlinna]: [https://en.wikipedia.org/wiki/Nevanlinna_Prize]
-[sat]: [http://en.wikipedia.org/wiki/Boolean_satisfiability_problem]
-[pcp]: [http://courses.cs.washington.edu/courses/cse533/05au/pcp-history.pdf]
-[max-3sat]: [http://en.wikipedia.org/wiki/MAX-3SAT]
-[csp]: [http://en.wikipedia.org/wiki/Constraint_satisfaction_problem]
-[clique]: [https://en.wikipedia.org/wiki/Clique_problem]
-[hypergraph]: [https://en.wikipedia.org/wiki/Hypergraph\#Hypergraph_coloring]
-[vertex-cover]: [https://en.wikipedia.org/wiki/Vertex_cover]
-[max-cut]: [https://en.wikipedia.org/wiki/Maximum_cut]
-[min-2sat-deletion]: [https://en.wikipedia.org/wiki/2-satisfiability\#Maximum-2-satisfiability]
-[graph-coloring]: [https://en.wikipedia.org/wiki/Graph_coloring]
+[khot]: https://www.cs.nyu.edu/~khot/
+[won]: http://www.simonsfoundation.org/quanta/20140812-a-grand-vision-for-the-impossible/]
+[nevanlinna]: https://en.wikipedia.org/wiki/Nevanlinna_Prize
+[sat]: http://en.wikipedia.org/wiki/Boolean_satisfiability_problem
+[pcp]: http://courses.cs.washington.edu/courses/cse533/05au/pcp-history.pdf
+[max-3sat]: http://en.wikipedia.org/wiki/MAX-3SAT
+[csp]: http://en.wikipedia.org/wiki/Constraint_satisfaction_problem
+[clique]: https://en.wikipedia.org/wiki/Clique_problem
+[hypergraph]: https://en.wikipedia.org/wiki/Hypergraph\#Hypergraph_coloring
+[vertex-cover]: https://en.wikipedia.org/wiki/Vertex_cover
+[max-cut]: https://en.wikipedia.org/wiki/Maximum_cut
+[min-2sat-deletion]: https://en.wikipedia.org/wiki/2-satisfiability\#Maximum-2-satisfiability
+[graph-coloring]: https://en.wikipedia.org/wiki/Graph_coloring
