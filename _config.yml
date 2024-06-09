@@ -40,7 +40,7 @@ author_bio: >-
   Sumo Logic working on data ingestion pipelines.
 author_pic: img/avatar.jpg
 
-paginate: 4
+paginate: 10
 paginate_path: "/:num/"
 
 markdown: kramdown
