@@ -10,7 +10,7 @@ usemathjax: true
 
 I was recently griding leetcode. Here, I take a look at binary search implementation. While the overall algorithm is simple, getting its implementation correct can be tricky - there are multiple edge cases to keep track of. We will start with a simple standard binary search problem and iteratively build on it. So, fasten your seat belts and get ready for an adventure into the world of binary search!
 
-The overall algorithm looks like - maintain left and right indexes. Then, find the mid index and compare the value at mid index to the target. Based on this comparison, either update left index or right index. Keep doing this till left and right become equal.
+The overall algorithm looks like - maintain left and right indexes. Then, find the middle index and compare the value at middle index to the target. Based on this comparison, either update left index or right index. Keep doing this till left and right become equal.
 
 In terms of pseudocode,
 ~~~
@@ -62,7 +62,7 @@ Simple enough, right! Let's take a closer look at the 3 if-clauses.
 2. We know that `target` is greater than `nums[mid]`. Hence, our new search space is `[mid + 1, right]`.
 3. We apply a similar reasoning here. The search space would be `[left, mid - 1]`.
 
-As a simple extension of this problem, consider the case when `target` may not exist in the sorted array (let's return -1 for such cases). In this case, we can check `nums[left]` to `target` after the while-loop and return `-1` if they are not equal.
+As a simple extension of this problem, consider the case when `target` may not exist in the sorted array (let's return `-1` for such cases). In this case, we can check `nums[left]` to `target` after the while-loop and return `-1` if they are not equal.
 
 ### Sorted array with unique elements. Smallest index whose element equals target.
 
@@ -91,7 +91,7 @@ def binarySearchLowestIndex(nums, target):
 
 Looks reasonable? The only remaining part is we need to ensure the while loop always terminates. The interesting bit is `right = mid` in the first if-clause. When `left` and `right` differ by `1`, `mid` will rounded to `left`. `right = mid` would mean `left` becomes equal to `right` and we exit out of while-loop. Good!
 
-Note that we can probably condense 1st and 3rd if-clause into a single if-clause : `if nums[mid] >= target: right = mid`. But, it will keep the current code as it for clarity.
+Note that we can probably condense 1st and 3rd if-clause into a single if-clause : `if nums[mid] >= target: right = mid`. But, let us keep the current code as is for clarity.
 
 We can again think about the case when `target` does not exist in the sorted array. It should be very similar to the previous problem.
 
@@ -196,11 +196,11 @@ Note that `mid = (left + right) / mid` or `mid = (left + right + 1) / mid`. This
 7. [Random Pick with Weight][weighted-sampling]
 8. [Minimum Array Length After Pair Removals][pair-removals] - It may not seem like binary search initially. But think more about it till you unravel the hidden binary search.
 
-[rotated]: [https://leetcode.com/problems/search-in-rotated-sorted-array/description/]
-[time-kv]: [https://leetcode.com/problems/time-based-key-value-store/description/]
-[hit-counter]: [https://leetcode.com/problems/design-hit-counter/description/]
-[next-permutation]: [https://leetcode.com/problems/next-permutation/description/]
-[max-profit]: [https://leetcode.com/problems/maximum-profit-in-job-scheduling/description/]
-[bad-version]: [https://leetcode.com/problems/first-bad-version/description/]
-[weighted-sampling]: [https://leetcode.com/problems/random-pick-with-weight/description/]
-[pair-removals]: [https://leetcode.com/problems/minimum-array-length-after-pair-removals/description/]
+[rotated]: https://leetcode.com/problems/search-in-rotated-sorted-array/description/
+[time-kv]: https://leetcode.com/problems/time-based-key-value-store/description/
+[hit-counter]: https://leetcode.com/problems/design-hit-counter/description/
+[next-permutation]: https://leetcode.com/problems/next-permutation/description/
+[max-profit]: https://leetcode.com/problems/maximum-profit-in-job-scheduling/description/
+[bad-version]: https://leetcode.com/problems/first-bad-version/description/
+[weighted-sampling]: https://leetcode.com/problems/random-pick-with-weight/description/
+[pair-removals]: https://leetcode.com/problems/minimum-array-length-after-pair-removals/description/
