@@ -18,6 +18,8 @@ I was recently looking at prep material for system design interviews. Enumeratin
 7. [Jordan has no life][jordan] - Another youtube channel. It's not a full blow system design interview - the author talks of multiple building blocks of a system design (think  event driven architecture, CDC, CDN, pubsub, etc.). Useful to brush up these topics. More recently, you will find videos on concrete system design problems.
 8. [Hello Interview][hello-interview] - A more recent resource by an ex-Meta employee. I would rate its solutions to be of the highest quality. I think technically knowing about a system design problem is just first part of battle. The remaining part is how you present it in a time constrained interview setting. I don't think any other resource does justice to the presentation aspect. Hello interview goes into the right depth from an interview perspective - too little may mean you are not comprehensive enough and too much may mean you are wasting too much time. Also, some of their comments on level specific knowledge is really useful. It helped me gauge what really separates a software engineer at a mid v/s senior v/s staff level from a System Design perspective.
 
+Sounds a lot? I agree! If you are razor focussed on interviews, you can start with System Design Interview book and branch from there.
+
 Besides, what you do at work should be the real playground for system design experience (obviously!). From my experience, this holds true in a smaller enviroment where you are handle things end to end. In a larger setting, you tend to focus too deep into the problem at hand. Anyhow, I digress!
 
 I plan to write more articles on system design interview prep - so stay tuned. Got more recommendations? Get in touch!
