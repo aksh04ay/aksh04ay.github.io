@@ -64,7 +64,7 @@ Simple enough, right! Let's take a closer look at the 3 if-clauses.
 
 As a simple extension of this problem, consider the case when `target` may not exist in the sorted array (let's return `-1` for such cases). In this case, we can check `nums[left]` to `target` after the while-loop and return `-1` if they are not equal.
 
-### Sorted array with unique elements. Smallest index whose element equals target.
+### Sorted array with duplicate elements. Smallest index whose element equals target.
 
 Let's extend the previous problem. Suppose we can have duplicate elements. And we need to find the minimum index whose value equals target (let's assume the target exists in the sorted array).
 
@@ -95,7 +95,7 @@ Note that we can probably condense 1st and 3rd if-clause into a single if-clause
 
 We can again think about the case when `target` does not exist in the sorted array. It should be very similar to the previous problem.
 
-### Sorted array with unique elements. Largest index whose element equals target.
+### Sorted array with duplicate elements. Largest index whose element equals target.
 
 Very similar to the last problem. Except that in this case, we need to return the largest index whose value is equal to `target`.
 
