@@ -5,7 +5,7 @@
     <img src="https://i.postimg.cc/R04gwg7n/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Watery Theme for Jekyll</h3>
+  <h3 align="center">Watery Theme for Jekyll!</h3>
 
   <p align="center">
     A bare-bones template to help you get started on your next blog or website.
