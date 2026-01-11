@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "End of 2025"
+date: 2025-12-29
+tags:
+  - life
+usemathjax: true
+---
+
+As 2025 comes to a close, it's time to look back at the year that was. I spent a greater than average amount of time in work, but that's not to say I didn't have fun along the way.
+
+Workout wise, I had a good start in first half of the year. But, it fizzled rapidly towards the end of the year. Can be improved a lot. The only consolation was a half marathon - I ran my 2nd half marathon in July. The one before than was in 2020 - so a five year gap. I literally registered for the event 3 days back and the only practice I did was a 7k run 2 days before the event. So, I am happy I could finish it. I would rate San Francisco track as a challenging track due to constant elevation changes - we started from The Embarcadero, climbed up to the Golden Gate Bridge, crossed it, climbed it down to sea level in San Marin county and then climbed it back again to cross back into the city. So, a fair amount of elevation change. But hey, I ain't complaining!
+
+Towards the end of the year, I got pulled into self-hosting and home networking journey. It started innocuously with a spare Raspberry Pi, but I added multiple cheap second-hand mini PCs sourced from eBay. The major self-hosted services I currently use are - network wide ad-blocker, photo library, password manager and some auxiliary services to support them. Maintaining them can be a real challenge - this is why we have SREs. I sure can't guarantee 100% uptime. But it works. I also got a travel router for the time when I am on road. Credits to AI tools for making this journey smoother.
+
+Talking of roads, there were not a lot of trips I did this year. In December, we visited The Big Island of Hawaii and were fortunate enough to witness a live volcano eruption. It was nothing like anything ([video][volcano]). During New Year's Eve, I'll in New Mexico. While the national parks are a pull, I am equally or more excited about Breaking Bad locations in Albuquerque.
+
+I also did a 10 day Vipassana meditation course in December. I did not have any prior meditation background from before. And it was a tough intense course - no outside contact or mobile access for those 10 days. And you are supposed to meditate for 10-12 hours a day. The pain was both physical and mental. I think I learnt some things but the learnings would have been better had I done some prior meditation. The first 3 days were exciting but my enthusiasm waned away after 1 week.
+
+Besides, I read 7 books in 2025. I consciously tried reading a few fiction books this year - something I want to continue in 2026. Check out my goodreads account for more information.
+
+Well, that's mostly it - in a nutshell. What about 2026? I would want to give more attention to my health. It's one of those things that starts with a bang and progressively degrades as the year goes on. The other things kinda remain the same. May be I would like to pick up piano again or photography, we will see - depending on time, enthusiasm and consistency.
+
+[volcano]: https://photos.aksh04ay.space/s/volcano
