@@ -1,0 +1,45 @@
+# jemdoc: menu{MENU}{index.html}, showsource
+=Akshay Kumar
+[https://aksh04ay.github.io/ Akshay Kumar] ([aksh04ay@gmail.com])
+
+~~~
+{}{img_left}{new.jpg}{noddy}{200px}{250px}
+#{}{img_left}{noddy.jpg}{noddy}{250px}{200px}
+Akshay Kumar\n
+Software Engineer\n
+Google LLC\n
+Mountain View, CA, USA
+#Fifth Year Student\n
+#Department of Computer Science \& Engineering\n
+#IIT Kanpur\n
+#Kanpur, India
+~~~
+
+#~~~
+#. I have decided to join Google (Alphabet ?), London as a Software Engineer.
+#. My master's thesis defense was on July 22, 2015. The slides of the talk can be found [thesis/pre.pdf here].
+#
+#The information present here might be outdated.
+#~~~
+
+
+Hi! I am a Software Engineer at Google Mountain View. 
+
+I work on problems related to measurement and optimization of effectiveness of ads on Youtube. I am more broadly interested in auctioning, bidding, budgeting and prediction modeling for ads on YouTube. Prior to moving to Mountain View, I was at Google London where I worked on Google AdSense.
+
+Before that, I graduated from IIT Kanpur with a Bachelor's and Master's Degree in Computer Science in July 2015.
+
+#I worked at Google London for 1.5 years after which I moved to Google Mountain View. Prior to that, I was a student at IIT Kanpur. I have a Master's and Bachelor's Degree in Computer Science.
+
+Currently, I am also doing a grad AI certification from Stanford University.
+
+#Hi! I am a fifth year student of [http://cse.iitk.ac.in/acad/dualdegree.html Dual Degree Program] (BTech--MTech) in [http:http://www.cse.iitk.ac.in/ Department of Computer Science \& Engineering], [http://iitk.ac.in/ IIT Kanpur]. My research interest includes the whole of Theoretical Computer Sciences with special emphasis on [http://en.wikipedia.org/wiki/Automata_theory Automata Theory] and [http://en.wikipedia.org/wiki/Approximation_algorithm Approximation Algorithms]. I wish to pursue doctoral studies after graduation.
+
+#I am presently doing master's thesis under the supervision of [http://cse.iitk.ac.in/users/skmehta/ Prof S K Mehta]. The thesis is in the field of approximation algorithms. Specifically speaking, we are looking at [https://en.wikipedia.org/wiki/Parameterized_complexity parametrized algorithms] and [https://en.wikipedia.org/wiki/Kernelization kernelization] techniques for $\textup{NP}-$Hard optimization problems. In my other avatars, I was an intern at [http://www.lsv.ens-cachan.fr/ LSV], [http://www.ens-cachan.fr/version-anglaise/ ENS Cachan] where I worked towards developing a robust theory for Parametrized Communicating Automata (PCA).
+
+#== Updates
+#. [http://hal.archives-ouvertes.fr/hal-01030765 Paper] on Complementation and Model Checking of Parametrized Communicating Automata accepted to [http://fsttcs.org/ FSTTCS 2014].
+#. [http://link.springer.com/chapter/10.1007/978-3-319-13734-6_24 Paper] on Stemming the flow of information in a social network accepted to [http://socinfo2014.org/ SocInfo 2014].
+#. Gave a [http://www2.cse.iitk.ac.in/~sigtacs/ SIGTACS talk] on "Unique Games Conjecture: Subhash Khot wins the Nevanlinna prize".
+
+This webpage has been generated using [http://jemdoc.jaboc.net/ jemdoc]: a light text-based text markup language which converts a jemdoc markup to static websites.

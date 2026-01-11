@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="keywords" content="akshay, kumar, google, mountain view, google mountain view, software engineer, google software engineer, google cse iitk, iit, iitk, cse, aksh04ay, akshay kumar, iit kanpur, iitk.ac.in, cse.iitk.ac.in">
+<meta name="description" content="Akshay Kumar, Google">
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<link rel="stylesheet" href="mmw.css" type="text/css" />
+<title>akshay ~ google</title>
+</head>
+<body>
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
+<td id="layout-menu">
+<div class="menu-category">academics</div>
+<div class="menu-item"><a href="index.html">Home</a></div>
+<div class="menu-item"><a href="academics.html">Academics</a></div>
+<div class="menu-item"><a href="publications.html">Publications</a></div>
+<div class="menu-item"><a href="talks.html">Talks&nbsp;Given</a></div>
+<div class="menu-item"><a href="courses.html">Course&nbsp;Work</a></div>
+<div class="menu-item"><a href="achievements.html">Achievements</a></div>
+<div class="menu-item"><a href="docs/Resume_2018.pdf">Resume</a></div>
+<div class="menu-category">projects</div>
+<div class="menu-item"><a href="researchintern.html">Research&nbsp;Internships</a></div>
+<div class="menu-item"><a href="softwareintern.html">Software&nbsp;Internship</a></div>
+<div class="menu-item"><a href="researchexp.html">Research&nbsp;Experience</a></div>
+<div class="menu-item"><a href="selectproject.html">Select&nbsp;Projects</a></div>
+<div class="menu-category">others</div>
+<div class="menu-item"><a href="extracurrics.html">Extracurrics</a></div>
+<div class="menu-item"><a href="contact.html">Contact</a></div>
+<div class="menu-category">technical writings</div>
+<div class="menu-item"><a href="mmw.html" class="current">MMW</a></div>
+<div class="menu-item"><a href="ugc.html">UGC</a></div>
+</td>
+<td id="layout-content">
+<div id="toptitle">
+<h1>Matrix Multiplicative Weights Update Method</h1>
+</div>
+<p>A few days ago, I watched a lecture of <a href="http://ttic.uchicago.edu/~madhurt/">Madhur Tulsiani</a> on multiplicative weight update method and its applications to solving LPs. In this post, I am going to briefly describe about this. You can find the talk <a href="http://ttic.uchicago.edu/~madhurt/courses/reu2014/reu2014.html">here</a>.</p>
+<h2>Problem Statement</h2>
+<p>Consider a system of <img class="eq" src="eqs/9984030031-130.png" alt="N" style="vertical-align: -0px" /> experts labelled <img class="eq" src="eqs/625108435062753842-130.png" alt="1,2,dots,N" style="vertical-align: -4px" />. There's a player who chooses an expert, say <img class="eq" src="eqs/13440040424-130.png" alt="i" style="vertical-align: -1px" />, and bears a loss equal to the loss of expert <img class="eq" src="eqs/13440040424-130.png" alt="i" style="vertical-align: -1px" />. The losses of each of the expert are revealed only after the player chooses the expert. This game continues on for, say, <img class="eq" src="eqs/14848044661-130.png" alt="t" style="vertical-align: -1px" /> rounds. The losses of each expert will be different in different round. The player's strategy is to choose the experts in each round such that his total loss is minimized.</p>
+<h2>Example</h2>
+<p>As an example, let <img class="eq" src="eqs/4612179489516983986-130.png" alt="l_i^{(t)}" style="vertical-align: -7px" /> denote the loss associated with expert <img class="eq" src="eqs/13440040424-130.png" alt="i" style="vertical-align: -1px" /> at time <img class="eq" src="eqs/14848044661-130.png" alt="t" style="vertical-align: -1px" />.  We can have the following possible scenario:</p>
+<table id="eg">
+<tr class="r1"><td class="c1">Experts </td><td class="c2"> <img class="eq" src="eqs/6272018864-130.png" alt="1" style="vertical-align: -0px" />  </td><td class="c3"> <img class="eq" src="eqs/6400019251-130.png" alt="2" style="vertical-align: -0px" /> </td><td class="c4"> <img class="eq" src="eqs/1673000118047957221-130.png" alt="cdots" style="vertical-align: --3px" /> </td><td class="c5"> <img class="eq" src="eqs/9984030031-130.png" alt="N" style="vertical-align: -0px" /> </td></tr>
+<tr class="r2"><td class="c1"><img class="eq" src="eqs/1495230934591648943-130.png" alt="t=1" style="vertical-align: -1px" /> </td><td class="c2"> <img class="eq" src="eqs/5760034605052020-130.png" alt="-1" style="vertical-align: -0px" /> </td><td class="c3"> <img class="eq" src="eqs/6272018864-130.png" alt="1" style="vertical-align: -0px" /> </td><td class="c4"> <img class="eq" src="eqs/1673000118047957221-130.png" alt="cdots" style="vertical-align: --3px" /> </td><td class="c5"> <img class="eq" src="eqs/5760034605052020-130.png" alt="-1" style="vertical-align: -0px" /> </td></tr>
+<tr class="r3"><td class="c1"><img class="eq" src="eqs/1495230934591648942-130.png" alt="t=2" style="vertical-align: -1px" /> </td><td class="c2"> <img class="eq" src="eqs/6272018864-130.png" alt="1" style="vertical-align: -0px" /> </td><td class="c3"> <img class="eq" src="eqs/6272018864-130.png" alt="1" style="vertical-align: -0px" /> </td><td class="c4"> <img class="eq" src="eqs/1673000118047957221-130.png" alt="cdots" style="vertical-align: --3px" /> </td><td class="c5"> <img class="eq" src="eqs/5760034605052020-130.png" alt="-1" style="vertical-align: -0px" />
+</td></tr></table>
+<p>Since the don't have complete information of the losses of each expert a prior, minimizing total loss makes little sense. Instead, we will try devising an algorithm where we perform as good as the best expert.</p>
+<h2>Greedy Algorithm</h2>
+<p>We will now prove that Greedy Algorithm can perform arbitrarily worse. Consider the following example:</p>
+<table id="greedy">
+<tr class="r1"><td class="c1">Experts </td><td class="c2"> <img class="eq" src="eqs/6272018864-130.png" alt="1" style="vertical-align: -0px" /> </td><td class="c3"> <img class="eq" src="eqs/6400019251-130.png" alt="2" style="vertical-align: -0px" /> </td><td class="c4"> <img class="eq" src="eqs/6528019634-130.png" alt="3" style="vertical-align: -1px" /> </td><td class="c5"> <img class="eq" src="eqs/1673000118047957221-130.png" alt="cdots" style="vertical-align: --3px" /> </td><td class="c6"> <img class="eq" src="eqs/9984030031-130.png" alt="N" style="vertical-align: -0px" /></td></tr>
+<tr class="r2"><td class="c1"><img class="eq" src="eqs/1495230934591648943-130.png" alt="t=1" style="vertical-align: -1px" /> </td><td class="c2"> <img class="eq" src="eqs/6272018864-130.png" alt="1" style="vertical-align: -0px" /> </td><td class="c3"> <img class="eq" src="eqs/5760034605052020-130.png" alt="-1" style="vertical-align: -0px" /> </td><td class="c4"> <img class="eq" src="eqs/5760034605052020-130.png" alt="-1" style="vertical-align: -0px" /> </td><td class="c5"> <img class="eq" src="eqs/1673000118047957221-130.png" alt="cdots" style="vertical-align: --3px" /> </td><td class="c6"> <img class="eq" src="eqs/5760034605052020-130.png" alt="-1" style="vertical-align: -0px" /></td></tr>
+<tr class="r3"><td class="c1"><img class="eq" src="eqs/1495230934591648942-130.png" alt="t=2" style="vertical-align: -1px" /> </td><td class="c2"> <img class="eq" src="eqs/6272018864-130.png" alt="1" style="vertical-align: -0px" /> </td><td class="c3"> <img class="eq" src="eqs/6272018864-130.png" alt="1" style="vertical-align: -0px" /> </td><td class="c4"> <img class="eq" src="eqs/5760034605052020-130.png" alt="-1" style="vertical-align: -0px" /> </td><td class="c5"> <img class="eq" src="eqs/1673000118047957221-130.png" alt="cdots" style="vertical-align: --3px" /> </td><td class="c6"> <img class="eq" src="eqs/5760034605052020-130.png" alt="-1" style="vertical-align: -0px" /></td></tr>
+<tr class="r4"><td class="c1"><img class="eq" src="eqs/1495230934591648941-130.png" alt="t=3" style="vertical-align: -1px" /> </td><td class="c2"> <img class="eq" src="eqs/6272018864-130.png" alt="1" style="vertical-align: -0px" /> </td><td class="c3"> <img class="eq" src="eqs/6272018864-130.png" alt="1" style="vertical-align: -0px" /> </td><td class="c4"> <img class="eq" src="eqs/6272018864-130.png" alt="1" style="vertical-align: -0px" /> </td><td class="c5"> <img class="eq" src="eqs/1673000118047957221-130.png" alt="cdots" style="vertical-align: --3px" /> </td><td class="c6"> <img class="eq" src="eqs/5760034605052020-130.png" alt="-1" style="vertical-align: -0px" /></td></tr>
+<tr class="r5"><td class="c1"></td><td class="c2"> </td><td class="c3"> </td><td class="c4"> </td><td class="c5"> <img class="eq" src="eqs/2740588985023950808-130.png" alt="vdots" style="vertical-align: -9px" /> </td><td class="c6"> </td></tr>
+<tr class="r6"><td class="c1"><img class="eq" src="eqs/1495230934591648978-130.png" alt="t=N" style="vertical-align: -1px" /> </td><td class="c2"> <img class="eq" src="eqs/6272018864-130.png" alt="1" style="vertical-align: -0px" /> </td><td class="c3"> <img class="eq" src="eqs/6272018864-130.png" alt="1" style="vertical-align: -0px" /> </td><td class="c4"> <img class="eq" src="eqs/6272018864-130.png" alt="1" style="vertical-align: -0px" /> </td><td class="c5"> <img class="eq" src="eqs/1673000118047957221-130.png" alt="cdots" style="vertical-align: --3px" /> </td><td class="c6"> <img class="eq" src="eqs/6272018864-130.png" alt="1" style="vertical-align: -0px" />
+</td></tr></table>
+<p><i>wlog</i> assume greedy algorithm picks the expert in following manner: Expert <img class="eq" src="eqs/6272018864-130.png" alt="1" style="vertical-align: -0px" />, Expert <img class="eq" src="eqs/6400019251-130.png" alt="2" style="vertical-align: -0px" /> and so on. Clearly, this strategy accumulates a huge loss. The best strategy is to pick Expert <img class="eq" src="eqs/9984030031-130.png" alt="N" style="vertical-align: -0px" /> at each stage.</p>
+<h2>MMW Algorithm</h2>
+<p>We will now describe the overall idea of MMW Algorithm:</p>
+<ol>
+<li><p>Maintain weights <img class="eq" src="eqs/1574566591054212769-130.png" alt="w_i^{(t)} &gt; 0" style="vertical-align: -7px" />.</p>
+</li>
+<li><p>Output distribution <img class="eq" src="eqs/67599404260009933-130.png" alt="(p_1^{(t)},p_2^{(t)},dots,p_N^{(t)})" style="vertical-align: -6px" /> at every step. Note that <img class="eq" src="eqs/1232329199524861116-130.png" alt="p_i^{(t)} propto w_i^{(t)}" style="vertical-align: -7px" />.</p>
+</li>
+<li><p>Loss at time <img class="eq" src="eqs/649959524806334037-130.png" alt="t = sum_i p_i^{(t)} cdot l_i^{(t)} = mathbf{p}_i^{(t)} cdot mathbf{l}_i^{(t)}" style="vertical-align: -8px" />.</p>
+</li>
+</ol>
+<p>The only remaining question is how to define <img class="eq" src="eqs/1675606664013715899-130.png" alt="w_i^{(t)}" style="vertical-align: -7px" /> and update them. There can be various possible approaches but the one we are going to use is based on Hedge Algorithm.</p>
+<h2>Hedge Algorithm</h2>
+
+<div class="eqwl"><img class="eqwl" src="eqs/8781401779996243750-130.png" alt="     w_i^{(t)} = 1 textup{~~} forall i " />
+<br /></div>
+<div class="eqwl"><img class="eqwl" src="eqs/1179949253465788615-130.png" alt="     w_i^{(t+1)} = w_i^{(t)} e^{epsilon l_i^{(t)}} textup{~~} l_i^{(t)} in {-1,1} " />
+<br /></div><h3>Analysis</h3>
+<p>For the analysis of this function, we will define a potential function and compare the upper and lower bounds of loss.<br />
+The potential function is defined as:</p>
+
+<div class="eqwl"><img class="eqwl" src="eqs/3468654295305116085-130.png" alt=" 	Phi^{(t)} = sum_{i=1}^N w_i^{(t)} " />
+<br /></div><h4>Lower bound</h4>
+<div class="infoblock">
+<div class="blockcontent">
+
+<div class="eqwl"><img class="eqwl" src="eqs/3939420132795755024-130.png" alt=" 	Phi^{(T+1)} ge exp(-epsilon sum_{t=1}^T l_i^{(t)}) textup{~~} forall i " />
+<br /></div></div></div>
+<p>The above inequality follows from the fact that right hand quantity is <img class="eq" src="eqs/7664307535635129731-130.png" alt="w_i^{(t+1)}" style="vertical-align: -7px" /> and each of the <img class="eq" src="eqs/1675606664013715899-130.png" alt="w_i^{(t)}" style="vertical-align: -7px" />'s is positive.</p>
+<h4>Upper bound</h4>
+<p>For the upper bound, we will be needing the following inequalities:</p>
+
+<div class="eqwl"><img class="eqwl" src="eqs/9026121068214611891-130.png" alt=" 	forall x: textup{~} |x| le 1, textup{~~} e^x le 1+x+x^2 " />
+<br /></div>
+<div class="eqwl"><img class="eqwl" src="eqs/6785913213007262680-130.png" alt=" 	forall x, textup{~~} 1+x le e^x " />
+<br /></div>
+<div class="eqwl"><img class="eqwl" src="eqs/4705090790030894908-130.png" alt=" Phi^{(T+1)} = sum_{i=1}^N w_i^{(T+1)} = sum_{i=1}^N w_i^{(T)} exp(-epsilon l_i^{(T)}) le sum_{i=1}^N w_i^{(T)} (1-epsilon l_i^{(T)}+epsilon^2) = sum_{i=1}^N w_i^{(T)} (1+epsilon^2) - epsilon sum_{i=1}^N w_i^{(T)} cdot l_i^{(T)} " />
+<br /></div><p>The second last line follows from using the above mentioned inequality and also the fact that <img class="eq" src="eqs/3334511128525036101-130.png" alt="l_i^{(T)} in {-1,1}" style="vertical-align: -7px" />. Using the fact that <img class="eq" src="eqs/6670845215313368603-130.png" alt="p_i^{(T)}=frac{w_i^{(T)}}{sum_i w_i^{(T)}}" style="vertical-align: -23px" />, we can write <img class="eq" src="eqs/5707209321324662114-130.png" alt="Phi^{(T+1)}" style="vertical-align: -0px" /> as</p>
+
+<div class="eqwl"><img class="eqwl" src="eqs/8421395408512700172-130.png" alt=" Phi^{(T+1)} = (1+epsilon^2) Phi^{(T)} - epsilon (mathbf{p}^{(T)} cdot mathbf{l}^{(T)}) Phi^{(T)} = Phi^{(T)} (1 + epsilon^2 - epsilon mathbf{p}^{(T)} cdot mathbf{l}^{(T)}) le Phi^{(T)} exp (epsilon^2 - epsilon mathbf{p}^{(T)} cdot mathbf{l}^{(T)}) " />
+<br /></div><p>Unfolding the <img class="eq" src="eqs/1313148741296821265-130.png" alt="Phi^{T}" style="vertical-align: -0px" />, we obtain that</p>
+<div class="infoblock">
+<div class="blockcontent">
+
+<div class="eqwl"><img class="eqwl" src="eqs/776960776375184132-130.png" alt=" Phi^{(T+1)} le N exp (epsilon^2 T - epsilon  sum_{t=1}^Tmathbf{p}^{(T)} cdot mathbf{l}^{(T)}) " />
+<br /></div></div></div>
+<p>Using the two bounds obtained and taking <img class="eq" src="eqs/5161625540728415562-130.png" alt="log" style="vertical-align: -4px" /> of both sides, we obtain,</p>
+<div class="infoblock">
+<div class="blockcontent">
+
+<div class="eqwl"><img class="eqwl" src="eqs/2924223760158830576-130.png" alt=" forall i textup{~~} sum_{t=1}^T mathbf{p}^{(t)} cdot mathbf{l}^{(t)} le sum_{t=1}^T l_i^{(t)} + frac{ln N}{epsilon} + epsilon T " />
+<br /></div></div></div>
+<p>The above inequality states that the loss incurred by our algorithm is worse off than the lost incurred by any expert (in particular, the best expert) by an additive factor which is independent of the expert's losses and depends only on the number of experts and rounds.<br />
+<br />
+To view the above loss per round, divide the whole equation by <img class="eq" src="eqs/10752032341-130.png" alt="T" style="vertical-align: -0px" />.</p>
+<div class="infoblock">
+<div class="blockcontent">
+
+<div class="eqwl"><img class="eqwl" src="eqs/6970803024627108614-130.png" alt=" forall i textup{~~} frac{1}{T} sum_{t=1}^T mathbf{p}^{(t)} cdot mathbf{l}^{(t)} le frac{1}{T} sum_{t=1}^T l_i^{(t)} + frac{ln N}{T epsilon} + epsilon " />
+<br /></div></div></div>
+<p>Hence, as the number of rounds (<img class="eq" src="eqs/10752032341-130.png" alt="T" style="vertical-align: -0px" />) increases, the algorithm performs better and the error drops. In fact, it can be shown that for <img class="eq" src="eqs/3084300815069012524-130.png" alt="T ge frac{4 rho^2 ln n}{eta^2}" style="vertical-align: -11px" />,</p>
+<div class="infoblock">
+<div class="blockcontent">
+
+<div class="eqwl"><img class="eqwl" src="eqs/447563752154312336-130.png" alt=" forall i textup{~~} frac{1}{T} sum_{t=1}^T mathbf{p}^{(t)} cdot mathbf{l}^{(t)} le frac{1}{T} sum_{t=1}^T l_i^{(t)} + eta " />
+<br /></div></div></div>
+<h3>Exercises</h3>
+<p>A few exercises which can be tried out to fully internalize the concept:</p>
+<ol>
+<li><p>Generalize for <img class="eq" src="eqs/8626947802440990825-130.png" alt="l_i^{(t)} in [-1,1]" style="vertical-align: -7px" />.</p>
+</li>
+<li><p>What if <img class="eq" src="eqs/6725424298475802099-130.png" alt="l_i^{(t)} in [-rho,rho]" style="vertical-align: -7px" />.</p>
+</li>
+<li><p>Using the update rule <img class="eq" src="eqs/2140410865068704549-130.png" alt="w_i^{(t+1)} = w_i^{(t)} (1 - epsilon l_i^{(t)})" style="vertical-align: -7px" /> and <img class="eq" src="eqs/8626947802440990825-130.png" alt="l_i^{(t)} in [-1,1]" style="vertical-align: -7px" />, prove that <img class="eq" src="eqs/3611701353221140151-130.png" alt="forall i, textup{~~} sum_{t=1}^T mathbf{p}^{(t)} cdot mathbf{l}^{(t)} le sum_{t=1}^T l_i^{(t)} + frac{ln N}{epsilon} + epsilon sum_{t=1}^T |l_i^{(t)}|" style="vertical-align: -8px" />.</p>
+</li>
+<li><p>Suppose <img class="eq" src="eqs/6540227361925785915-130.png" alt="l_i^{(t)} in [0,rho]" style="vertical-align: -7px" />. Using the same update rule as above, prove that for <img class="eq" src="eqs/839423689295431078-130.png" alt="T ge frac{4 rho ln N}{eta^2}" style="vertical-align: -10px" />, <img class="eq" src="eqs/6042404846446446367-130.png" alt="frac{1}{T} sum_t mathbf{p}^{(t)} cdot mathbf{l}^{(t)} le frac{1}{T} sum_t l_i^{(t)} + eta" style="vertical-align: -8px" />.</p>
+</li>
+</ol>
+<div id="footer">
+<div id="footer-text">
+Page generated 2019-01-02 22:23:43 PST, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
+</div>
+</div>
+</td>
+</tr>
+</table>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-56996692-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

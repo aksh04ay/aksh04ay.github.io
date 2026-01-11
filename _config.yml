@@ -18,32 +18,29 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Watery Theme for Jekyll 🚰
-email: mail@brennanbrown.ca
+title: Akshay Kumar
+email: aksh04ay@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  A minimalist, bare-bones theme for Jekyll only using the Water.css
-  framework while still following the best practices possible for
-  accessibility and search-engine optimization.
+  A potpourri of ideas
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://watery.netlify.app" # the base hostname & protocol for your site, e.g. http://example.com
-repository: brennanbrown/watery
-twitter: brennankennethbrown
-github: brennanbrown
+url: "https://aksh04ay.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+repository: aksh04ay/aksh04ay.github.io
+twitter: aksh04ay
+github: aksh04ay
+goodreads: 41356690-akshay-kumar
+linkedin: akshay-kumar-b1254335
 
 google_analytics:
 comments: true
 disqus: watery-jekyll
 
-author: Brennan K. Brown
+author: Akshay Kumar
 author_bio: >-
-  Hey there! 😄 My name is Brennan, I'm a 29-year-old Métis web developer and 
-  content strategist from Winnipeg, Manitoba and currently reside in Calgary, 
-  Alberta. I've recently compeleted a Full Stack Developer Program at EvolveU, 
-  and I'm looking to help those that need web development work done, or 
-  searching for ideas and management for their next content project.
-author_pic: https://brennanbrown.ca/images/hero/hero-image.jpg
+  Hey there! 😄  My name is Akshay, I am a Senior Software Engineer at
+  Sumo Logic working on data ingestion pipelines.
+author_pic: img/avatar.jpg
 
-paginate: 4
+paginate: 5
 paginate_path: "/:num/"
 
 markdown: kramdown
